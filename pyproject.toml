@@ -1,0 +1,12 @@
+[project]
+name = "master-thesis-experiments"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyterlab>=4.4.10",
+    "matplotlib>=3.10.7",
+    "rstt>=0.6.7",
+    "scipy>=1.16.3",
+]
