@@ -9,3 +9,6 @@ You can find documentation and tutorials on https://github.com/Ematrion/rstt. wh
 As a consequence, the original experimental code is deprecated and the original rstt codebase no longer avilable upon request.
 
 This repository offers all the experiments with up to date rstt syntax and with reproducible results. 
+
+:warining: Work in progress.
+Close to finish all re-implementation. Needs text and caption polishing. 

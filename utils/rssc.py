@@ -17,6 +17,7 @@ def rssc(name: str, seed: Ranking, cup: type[Competition], solver: Solver, depth
         
         if update:
             seed.update(event=tournament)
-        results.append(metric(ranking=seed, event=tournament, ref=seed))
+
+        results.append(metric(ranking=seed, event=tournament))
 
     return results

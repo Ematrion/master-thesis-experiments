@@ -7,9 +7,11 @@ requires-python = ">=3.13"
 dependencies = [
     "jupyterlab>=4.4.10",
     "matplotlib>=3.10.7",
-    "rstt>=0.6.7",
+    "rstt==0.6.7.1",
     "scipy>=1.16.3",
     "pandas (>=2.3.3,<3.0.0)",
+    "trueskill>=0.4.5",
+    "openskill==5",
 ]
 
 [tool.poetry.group.dev.dependencies]

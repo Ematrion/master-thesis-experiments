@@ -10,7 +10,6 @@ def summary(fav, scoring, mins, maxs, worst_es, worst_wp, labels):
             f'favorite in {fav[i]}',
             f', topscorer in {scoring[i]}')
 
-    print('\n\n\n')
 
 def visualize_bracket_analysis(results, labels, matrix, axs):
     NB = len(labels)
@@ -34,3 +33,9 @@ def visualize_bracket_analysis(results, labels, matrix, axs):
     axs[4].hist(x=[result['GTCOR_ES'] for result in results], bins='auto', rwidth=0.85)   
     axs[4].set_xticks([0.4, 0.6, 0.8, 1.0])
     axs[4].set_title('Expected Score Correlation')
+
+def plot_empirical_vs_simulation(result, axs):
+    axs[0].imshow(result.empirical.domain)
+    axs[1].imshow(result.simulation.domain)
+    
+        
