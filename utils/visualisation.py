@@ -1,5 +1,11 @@
 import matplotlib.pyplot as plt
 
+def colorgradient(RGB1, RGB2, n):
+    dRGB = [float(x2-x1)/(n-1) for x1, x2 in zip(RGB1, RGB2)]
+    gradient = [tuple([float(x+k*dx)/255 for x, dx in zip(RGB1, dRGB)]) for k in range(n)]
+    return gradient
+
+
 def summary(fav, scoring, mins, maxs, worst_es, worst_wp, labels):
     print('worst seed regarding winner probabilities', worst_wp[0], worst_wp[1])
     print('worst seed regarding expected score', worst_es[0], worst_es[1], '\n')
