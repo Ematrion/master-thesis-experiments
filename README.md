@@ -9,7 +9,8 @@
   University of Fribourg
 </p>
 
-[![DOI](https://zenodo.org/badge/17680159.svg)](https://doi.org/10.5281/zenodo.17680159)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17680159.svg)](https://doi.org/10.5281/zenodo.17680159)
+
 
 
 ## Content Summary
