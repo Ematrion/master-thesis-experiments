@@ -12,6 +12,8 @@ dependencies = [
     "pandas (>=2.3.3,<3.0.0)",
     "trueskill>=0.4.5",
     "openskill==5",
+    "jupyter>=1.1.1",
+    "notebook>=7.4.7",
 ]
 
 [tool.poetry.group.dev.dependencies]
