@@ -37,9 +37,9 @@ Some notebooks include a section **Further Notes**, which contains insight not p
 My thesis started as a personal exploratory project. I wanted to verify and disprove certain frequent claims in the gaming community. I coded a first simulation prototype, then became more passionate about the project and started to investigate ranking algorithms and evaluation methodologies from the perspective of my experience in high-level competition.
 During the literature review, the experimental protocol and evaluation techniques of SOTA modern rating systems caught my attention.
 
-- One fundamental property of the Elo rating is systematically neglected or overlooked. Elo does not simply converge; it does not have a function that predicts game outcomes accurately. Elo is a Markov process with a unique stationary distribution (steady state). We know exactly what Elo does, which is a tremendous asset for reinforcement learning and unsupervised learning.
-- The data structure and the interplay between a ranking learning from games and producing recommendations for future games is not a detail and can alter competitive results. High-level chess consists of double round-robin or Swiss rounds, and as a graph, contains many cycles. Professional tennis consists of single-elimination brackets with no cycle at all. A cross-validation methodology where a dataset is split in time for training and test sets produces the same distribution of data points. You need to split the *distribution* of points to claim it generalizes.
-- Skill-based matchmaking creates a pleasant gaming experience but produces irrelevant data for learning. There is no information in an a priori balanced game — at least according to Shannon’s theory. The expected-score baseline on such a dataset is a random predictor, yet no paper compares their system to it.
+- One fundamental property of the Elo rating is systematically neglected or overlooked. Elo does not simply converge; it does not have a function that predicts game outcomes accurately. **Elo is a Markov process with a unique stationary distribution** (steady state). We know exactly what Elo does, which is a tremendous asset for reinforcement learning and unsupervised learning.
+- The data structure and the interplay between a ranking learning from games and producing recommendations for future games is not a detail and can alter competitive results. High-level chess consists of double round-robin or Swiss rounds, and as a graph, contains many cycles. Professional tennis consists of single-elimination brackets with no cycle at all. **A cross-validation methodology in which a dataset is split in time for training and test sets produces the same distribution of data points**. You need to split the *distribution* of points to claim it generalizes.
+- Skill-based matchmaking creates a pleasant gaming experience but produces irrelevant data for learning. **There is no information in an a priori balanced game** — at least according to Shannon’s theory. The expected-score baseline on such a dataset is a random predictor, yet no paper compares their system to it.
 
 I formulated the **“Matchmaking Domain Overfitting Hypothesis”** and opted for simulation-based research. The rationale for it:
 
@@ -57,27 +57,6 @@ I formulated the **“Matchmaking Domain Overfitting Hypothesis”** and opted f
 - A setting in which TrueSkill and OpenSkill need more than 600 gamess to correctly sort 8 players, proving that players can have a poor ranking experience despite playing at their level.
 
 ---
-
-## Content Summary
-
-The repository focuses on *Chapter 4* — the experimental part of the thesis.
-
-Each notebook is a standalone experiment. All start with a number matching the section of the written document. They contain the code and comments from the thesis. It is recommended to consult them in order.
-
-- **4.1 Baseline**: I claim we can use Kendall tau rank correlation to track Elo convergence. This notebook presents values to expect in settings relevant to the thesis.
-- **4.2 Elo Prediction**: I claim that a perfectly tuned ranking — from a *predictive* metric perspective — can overfit data even with proper training/validation. I build a synthetic example illustrating it.
-- **4.3 The Snake Scheduler**: I propose a simple model for skill-based matchmaking. I run a simulation where I measure *game quality* computed by Elo, Glicko, TrueSkill, and OpenSkill.
-- **4.4 Random Snake**: a conceptual benchmark test highlighting qualitative differences between SOTA rankings.
-- **4.5 Convergence in the Snake Format**: an extension of 4.4 showing how the conceptual test translates to a more realistic scenario.
-
-#### Remark
-Texts are close to the ones in the thesis PDF. They have been slightly adjusted to make the notebooks self-readable but may contain references to other chapters not available in this repo.
-
-#### Extension
-Some notebooks include a section **Further Notes**, which contains insight not presented in the thesis nor to the expert panel during Chapter 5. These are not necessary to follow the experimentation but bring valuable context and elements to anyone exploring my work.
-
----
-
 
 ## Installation
 
@@ -105,6 +84,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```
 
 3. Create and sync the environment
+
 uv will read both pyproject.toml and uv.lock to create a fully reproducible environment:
 ```
 uv sync
